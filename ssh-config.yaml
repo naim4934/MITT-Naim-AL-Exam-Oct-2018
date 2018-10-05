@@ -1,0 +1,12 @@
+---
+- hosts: web
+  sudo: yes
+  tasks:
+  - name: install vim
+    apt: name=vim state=installed update_cache=yes
+    become: yes
+
+  - name: run a command
+    command: apt-get update
+    become: yes
+
